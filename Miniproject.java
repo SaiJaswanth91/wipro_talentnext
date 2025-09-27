@@ -1,7 +1,6 @@
 package Miniproject;
 import java.util.Scanner;
 public class Miniproject {
-
 	static class Employee {
 	        int empNo;
 	        String empName;
@@ -11,7 +10,6 @@ public class Miniproject {
 	        int basic;
 	        int hra;
 	        int it;
-
 	        Employee(int empNo, String empName, String joinDate, char designationCode,
 	                 String department, int basic, int hra, int it) {
 	            this.empNo = empNo;
@@ -24,13 +22,10 @@ public class Miniproject {
 	            this.it = it;
 	        }
 	    }
-
 	    public static void main(String[] args) {
-
 	        Scanner sc = new Scanner(System.in);
 	        System.out.print("Enter employee id: ");
-	        int searchEmpId = sc.nextInt();
-
+	        int searchEmpId = sc.nextInt();            
 	        Employee[] employees = new Employee[]{
 	            new Employee(1001, "Ashish", "01/04/2009", 'e', "R&D", 20000, 8000, 3000),
 	            new Employee(1002, "Sushma", "23/08/2012", 'c', "PM", 30000, 12000, 9000),
@@ -40,15 +35,12 @@ public class Miniproject {
 	            new Employee(1006, "Suman", "1/1/2000", 'e', "Manufacturing", 23000, 9000, 4400),
 	            new Employee(1007, "Tanmay", "12/06/2006", 'c', "PM", 29000, 12000, 10000)
 	        };
-
 	        boolean found = false;
-
 	        for (Employee emp : employees) {
 	            if (emp.empNo == searchEmpId) {
 	                found = true;
 	                String designation = "";
 	                int da = 0;
-
 	                switch (emp.designationCode) {
 	                    case 'e':
 	                        designation = "Engineer";
@@ -74,19 +66,14 @@ public class Miniproject {
 	                        designation = "Unknown";
 	                        da = 0;
 	                }
-
 	                int salary = emp.basic + emp.hra + da - emp.it;
-
 	                System.out.println("Emp No.\tEmp Name\tDepartment\tDesignation\tSalary");
-	                System.out.println(emp.empNo + "\t" + emp.empName + "\t" + emp.department + "\t" + designation + "\t" + salary);
+	                System.out.println(emp.empNo + "\t" + emp.empName + "\t         " + emp.department + "\t          " + designation + "\t " + salary);
 	                break;
 	            }
 	        }
-
 	        if (!found) {
 	            System.out.println("There is no employee with empid : " + searchEmpId);
 	        }
-
 	        sc.close();
-	    }
-	}
+	 }   }
